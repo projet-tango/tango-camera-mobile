@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tango Camera</string>
+    <string name="channel_name">Camera streaming</string>
+    <string name="channel_restart">Restart</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="save">Save</string>
+    <string name="scan_qr">Scan QR code</string>
+    <string name="code_hint">Pairing code (6 digits)</string>
+    <string name="server_hint">Middleware (empty = automatic), e.g. 192.168.1.10:47800</string>
+    <string name="state_stopped">Stopped</string>
+    <string name="state_searching">Looking for the middleware on the network…</string>
+    <string name="state_connecting">Connecting to %1$s…</string>
+    <string name="state_connected">Connected to %1$s</string>
+    <string name="state_bad_code">Wrong pairing code: enter the code shown by the middleware</string>
+    <string name="state_busy">Another phone is already streaming (retrying automatically)</string>
+    <string name="state_camera_error">Camera unavailable: %1$s</string>
+    <string name="detail_stream">%1$d×%2$d — %3$.1f fps</string>
+    <string name="notif_streaming">Streaming to %1$s — %2$.1f fps</string>
+    <string name="enter_code">Code required</string>
+    <string name="qr_invalid">QR code not recognised</string>
+    <string name="qr_unavailable">Scanner unavailable (Google Play services required): type the code instead</string>
+    <string name="paired_with">Paired with %1$s</string>
+    <string name="camera_permission_needed">Camera access is required</string>
+    <string name="tap_to_restart">Tap to restart the camera</string>
+    <string name="section_pairing">Pairing</string>
+    <string name="section_auto">Automatic start</string>
+    <string name="boot_start">Restart after the phone reboots</string>
+    <string name="launcher_mode">Home screen mode (dedicated phone: most reliable at boot)</string>
+    <string name="launcher_choose">Choose "Tango Camera" as the home app</string>
+    <string name="overlay_permission">Allow opening at boot ("display over other apps")</string>
+    <string name="battery_optim">Disable battery optimization</string>
+    <string name="tips">Lock the screen to save battery: streaming continues. Keep the phone plugged in. The connection comes back on its own if the Wi-Fi or the middleware restarts.</string>
+</resources>
