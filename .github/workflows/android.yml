@@ -1,0 +1,43 @@
+name: Android APK
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write   # attach the APK to GitHub releases on tags
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Build
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon lintDebug assembleRelease
+
+      - name: Rename APK
+        run: cp app/build/outputs/apk/release/app-release.apk tango-camera.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tango-camera-apk
+          path: tango-camera.apk
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: tango-camera.apk
